@@ -14,7 +14,7 @@ class Transaction
     @tag_id      = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
     @user_id     = options['merchant_id'].to_i
-    #@date
+    #@date = another table ?
     #@time
   end
 
@@ -34,7 +34,7 @@ class Transaction
     =
     ($1, $2, $3, $4)
     WHERE id = $5"
-    values = [@id, @amount, @tag_id, @merchant_id]
+    values = [@id, @amount, @tag_id, @merchant_id, @user_id]
     SqlRunner.run(sql, values)
   end
 

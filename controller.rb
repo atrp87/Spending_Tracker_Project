@@ -1,18 +1,24 @@
-# require('sinatra')
-# require('sinatra/contrib/all')
-# require_relative('models/student')
-# require_relative('models/house')
-# also_reload('./models/*')
+require('sinatra')
+require('sinatra/contrib/all')
+require_relative('models/transaction')
+require_relative('models/merchant')
+require_relative('models/user')
+require_relative('models/tag')
+also_reload('models/*')
 
-# get '/user' do
-#   @username = User.all
-#   erb(:index)
-# end
 
-# get '/merchant/new' do
-#   erb(:new)
-# end
+get '/home' do
+  @users = User.all
+  erb(:index)
+end
 
-# post '/' do
-#   erb(:save)
-# end
+get '/home/new' do
+  @merchants = Merchant.all
+  @tags = Tag.all
+ erb(:new)
+end
+
+post '/home/new/save' do
+
+  erb(:save)
+end

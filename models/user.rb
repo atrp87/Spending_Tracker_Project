@@ -1,4 +1,4 @@
-require_relative('transcation')
+require_relative('transaction')
 require_relative('tag')
 require_relative('../db/sql_runner.rb')
 
@@ -11,14 +11,11 @@ class User
     @id       = options['id'].to_i if options['id']
     @username = options['username']
     @budget   = options['budget'].to_i
-   #@budget   = 300 hard code budget ?
+    #@budget   = 300 hard code budget ?
   end
 
   def save()
-    sql = "INSERT INTO users (username,   budget)
-    VALUES
-    ($1, $2)
-    RETURNING id"
+    sql = "INSERT INTO users (username, budget) VALUES ($1, $2) RETURNING id"
     values = [@username, @budget]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
@@ -26,17 +23,13 @@ class User
   end
 
   def update()
-    sql = "UPDATE users SET (username, budget)
-    =
-    ($1, $2)
-    WHERE id = $3"
+    sql = "UPDATE users SET (username, budget) = ($1, $2) WHERE id = $3"
     values = [@id, @username, @budget]
     SqlRunner.run(sql, values)
   end
 
   def delete()
-    sql = "DELETE FROM users
-          WHERE id = $1"
+    sql = "DELETE FROM users WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end
@@ -54,8 +47,7 @@ class User
   end
 
   def self.find(id)
-    sql = "SELECT * FROM user
-    WHERE id = $1"
+    sql = "SELECT * FROM users WHERE id = $1"
     values = [id]
     user_data = SqlRunner.run(sql, values)
     return User.map_item(user_data)

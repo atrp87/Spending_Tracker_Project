@@ -1,4 +1,4 @@
-require_relative('Merchant.rb')
+require_relative('merchant.rb')
 require_relative('user.rb')
 require_relative('tag.rb')
 require_relative('../db/sql_runner.rb')
@@ -21,17 +21,16 @@ class Transaction
   def save()
     sql = "INSERT INTO transactions (amount, tag_id, merchant_id, user_id)
     VALUES
-    ($1, $2, $3, £4)
+    ($1, $2, $3, $4)
     RETURNING id"
     values = [@amount, @tag_id, @merchant_id, @user_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
-    @id = id
+    @id = id.to_i
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, tag_id, merchant_id, user_id)
-    =
+    sql = "UPDATE transactions SET (amount, tag_id, merchant_id, user_id) =
     ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@id, @amount, @tag_id, @merchant_id, @user_id]

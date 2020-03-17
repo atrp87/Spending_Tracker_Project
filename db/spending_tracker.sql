@@ -3,8 +3,6 @@ DROP TABLE IF EXISTS merchants;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS tags;
 
--- CREATE MONTH TABLE ?
-
 CREATE TABLE merchants (
   id SERIAL PRIMARY KEY,
   name VARCHAR(30)
@@ -21,8 +19,6 @@ CREATE TABLE users (
   budget NUMERIC
 );
 
--- date = DATE, time = TIMESTAMP
-
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
   amount NUMERIC,
@@ -30,5 +26,3 @@ CREATE TABLE transactions (
   user_id INT REFERENCES users(id),
   tag_id INT REFERENCES tags(id)
 );
-
---ON DELETE CASCADE

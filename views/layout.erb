@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title></title>
-  <link href="" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
-</head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../public/style.css">
+ </head>
+
 <body>
-<nav>
-  <ul>
-    <li>
-      <a href="/home/new">Account</a>
-    </li>
-  </ul>
-  <%= yield %>
-</body>
+    <nav id="nav">
+      <ul>
+        <a href="/" id="nav">Home</a>
+        <a href="/transactions" id="nav">Transactions</a>
+        <a href="/transaction/total" id="nav">ALL</a>
+      </ul>
+    </nav>
+
+    <%= yield %>
+
+    <nav id="nav">
+      <ul>
+        <a href="/tags" id="nav">Tags</a>
+        <a href="/merchants" id="nav">Merchants</a>
+      </ul>
+    </nav>
+  </body>
 </html>
 
 

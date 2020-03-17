@@ -10,8 +10,7 @@ class User
   def initialize( options )
     @id       = options['id'].to_i if options['id']
     @username = options['username']
-    @budget   = options['budget'].to_i
-    #@budget   = 300 hard code budget ?
+    @budget   = options['budget'].to_i if options['budget']
   end
 
   def save()

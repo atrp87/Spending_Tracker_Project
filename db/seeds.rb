@@ -4,7 +4,7 @@ require_relative('../models/user')
 require_relative('../models/tag')
 require_relative('sql_runner')
 
-require('pry')
+# require('pry')
 
 Transaction.delete_all()
 Merchant.delete_all()
@@ -35,5 +35,5 @@ tag3.save()
 #
 # transaction1.save()
 
-binding.pry
-nil
+# binding.pry
+# nil

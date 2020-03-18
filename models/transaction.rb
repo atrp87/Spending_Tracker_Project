@@ -14,8 +14,6 @@ class Transaction
     @tag_id      = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
     @user_id     = options['merchant_id'].to_i
-    #@date = another table ?
-    #@time
   end
 
   def save()

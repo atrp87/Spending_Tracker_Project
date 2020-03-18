@@ -1,6 +1,23 @@
 body {
   padding: 30px;
-  font-family: fantasy;
   color: #ccad00;
   background: grey;
+  font-style: normal;
+
+}
+
+h1 {
+  color: #89cff0;
+  font-weight: 800;
+  font-style: normal;
+  margin-left: 1.66%;
+  font-size: 23px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #89cff0;
+  border-bottom
+  padding-bottom: 3%;
+}
+
+tr, td, th {
+border: 1px solid black;
 }

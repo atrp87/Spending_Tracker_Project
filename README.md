@@ -15,7 +15,9 @@ The project build restrictions:
 * Ruby
 * Sinatra
 * PostgreSQL and the PG gem
-* Project must at minimum include the following core functionality:
+
+Project must at minimum include the following core functionality:
+
 * Creating rows
 * Reading data
 * Deleting data

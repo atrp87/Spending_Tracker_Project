@@ -2,6 +2,8 @@
 
 I had one week to build build an app to consolidate and expand on everything I had learned in the previous 3 weeks.
 
+* Planning
+* Presentation
 * Object oriented programming with Ruby
 * Web Programming (Sinatra, REST, MVC)
 * Interacting with a PostgreSQL database (CRUD)

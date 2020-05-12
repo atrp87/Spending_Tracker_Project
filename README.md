@@ -1,6 +1,6 @@
 ### Spending Tracker
 
-I had one week to build build an app to consolidate and expand on everything I had learned in the previous 3 weeks.
+:dollar: I had one week to build build an app to consolidate and expand on everything I had learned in the previous 3 weeks.
 
 * Planning
 * Presentation

@@ -8,7 +8,7 @@ During this project I got to consolidate and expand on everything I had learned 
 * Sinatra
 
 * Restful routes
-* CRUD Action
+* CRUD Actions
 * Single responsibility
 * project structure and good naming conventions.
 

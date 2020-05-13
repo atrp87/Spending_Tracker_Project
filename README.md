@@ -4,10 +4,15 @@ I had one week to build build a web application to consolidate and expand on eve
 
 During this project I got to consolidate Restful routes, single responsibility, project structure and good naming conventions.
 
+* The app should allow the user to create and edit merchants, e.g. Tesco, Amazon, ScotRail
+* The app should allow the user to create and edit tags for their spending, e.g. groceries, entertainment, transport
+* The user should be able to assign tags and merchants to a transaction, as well as an amount spent on each transaction.
+* The app should display all the transactions a user has made in a single view, with each transaction's amount, merchant and tag, and a total for all transactions.
+
 * Planning
-* Presentation
 * Object oriented programming with Ruby
 * Web Programming (Sinatra, REST, MVC)
 * Interacting with a PostgreSQL database (CRUD)
 * Version control Git & GitHub
+* Presentation
 

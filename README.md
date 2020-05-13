@@ -3,7 +3,14 @@
 I had one week to build build a web application that allows a user to track their spending.
 During this project I got to consolidate and expand on everything I had learned in the previous 3 weeks @ CodeClan.
 
-Restful routes, single responsibility, project structure and good naming conventions.
+* Ruby
+* PostgreSQL
+* Sinatra
+
+* Restful routes
+* CRUD Action
+* Single responsibility
+* project structure and good naming conventions.
 
 Breif:
 

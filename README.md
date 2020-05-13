@@ -1,6 +1,6 @@
 ### Spending Tracker
 
-:I had one week to build build a web application to consolidate and expand on everything I had learned in the previous 3 weeks.
+I had one week to build build a web application to consolidate and expand on everything I had learned in the previous 3 weeks.
 
 * Planning
 * Presentation

@@ -1,6 +1,7 @@
 ## Spending Tracker :dollar:
 
-I had one week to build build a web application that allows a user to track their spending.
+I had one week to build build a Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
+
 During this project I got to consolidate and expand on everything I had learned in the previous 3 weeks @ CodeClan.
 
 * Ruby | PostgreSQL | Sinatra

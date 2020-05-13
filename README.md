@@ -3,10 +3,8 @@
 I had one week to build build a web application that allows a user to track their spending.
 During this project I got to consolidate and expand on everything I had learned in the previous 3 weeks @ CodeClan.
 
-* Ruby
-* PostgreSQL
-* Sinatra
-
+* Ruby | PostgreSQL | Sinatra
+* HTML | CSS
 * Restful routes
 * CRUD Actions
 * Single responsibility

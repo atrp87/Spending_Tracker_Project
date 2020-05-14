@@ -5,11 +5,12 @@ I had one week to build build a Web application where the user can manage expens
 During this project I got to consolidate and expand on everything I had learned in the previous 3 weeks @ CodeClan.
 
 * OOP (Ruby)
-* TDD (Ruby | MiniTest)
+* TDD (MiniTest)
 * Web Programming (Sinatra, REST, MVC)
 * DB design (PostgreSQL) 
 * HTML | CSS
 * Version control Git & GitHub
+
 * Restful routes
 * CRUD Actions
 * Single responsibility

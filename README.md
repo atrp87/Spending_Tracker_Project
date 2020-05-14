@@ -6,7 +6,7 @@ During this project I got to consolidate and expand on everything I had learned 
 
 * OOP: Ruby
 * TDD: MiniTest
-* Web Programming: Sinatra, REST, MVC
+* Web Programming: Sinatra (REST, MVC)
 * DB design: PostgreSQL
 * HTML & CSS
 * Version control: Git & GitHub

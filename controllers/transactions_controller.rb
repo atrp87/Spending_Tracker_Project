@@ -4,26 +4,30 @@ require_relative('../models/transaction')
 also_reload('../models/*')
 
 get '/transactions' do
-  @transactions = Transaction.all()
-  erb(:"transaction/new")
+  @transaction = Transaction.order()
+  erb( :"transaction/index" )
 end
 
 get '/transactions/new' do
-  @tags = Tag.all()
   @merchants = Merchant.all()
-  @users = User.all()
-  erb(:"transactions/new")
+  @tags = Tag.all()
+  erb ( :"transaction/new")
 end
 
-post '/transactions' do
+post '/transactions/new' do
   @transaction = Transaction.new(params)
   @transaction.save()
-  redirect to "/transactions"
+  redirect('/transaction')
 end
 
-get '/transaction/new' do
-  @tags = Tag.all()
-  @merchants = Merchant.all()
-  @users = User.all()
-  erb(:"transactions/new")
+get '/transactions/:id' do
+  @transactions = Transaction.find(params['id'])
+  erb (:"transaction/index")
 end
+
+post '/transactions/:id/delete' do
+  @transaction = Transaction.find(params['id'])
+  @transaction.delete()
+  redirect ('/transaction')
+end
+

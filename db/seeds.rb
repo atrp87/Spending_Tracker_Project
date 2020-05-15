@@ -1,6 +1,5 @@
 require_relative('../models/transaction')
 require_relative('../models/merchant')
-require_relative('../models/user')
 require_relative('../models/tag')
 require_relative('sql_runner')
 
@@ -8,12 +7,8 @@ require_relative('sql_runner')
 
 Transaction.delete_all()
 Merchant.delete_all()
-User.delete_all()
 Tag.delete_all()
 
-user = User.new({ 'username' => 'Andrew', 'budget' => 300 })
-
-user.save()
 
 merchant1 = Merchant.new({ 'name' => 'Amazon' })
 merchant2 = Merchant.new({ 'name' => 'Costco' })
@@ -31,9 +26,15 @@ tag1.save()
 tag2.save()
 tag3.save()
 
-# transaction1 = Transaction.new({ 'user_id' => 'user.id', 'budget' => -100, 'tag_id' => tag1.id, 'merchant_id' => merchant1.id, 'budget' => -100 })
-#
-# transaction1.save()
+transaction1 = Transaction.new({ 'merchant_id' => merchant1.id, 'tag_id' => tag1.id, 'amount' => 60 })
+
+transaction1 = Transaction.new({ 'merchant_id' => merchant2.id, 'tag_id' => tag2.id, 'amount' => 20 })
+
+transaction1 = Transaction.new({ 'merchant_id' => merchant3.id, 'tag_id' => tag3.id, 'amount' => 45 })
+
+transaction1.save()
+transaction2.save()  
+transaction3.save()
 
 # binding.pry
 # nil

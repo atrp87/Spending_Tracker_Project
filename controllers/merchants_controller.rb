@@ -3,17 +3,42 @@ require('sinatra/contrib/all')
 require_relative('../models/merchant')
 also_reload('../models/*')
 
+
 get '/merchants' do
   @merchants = Merchant.all()
-  erb(:"merchant/index")
+  erb (:"merchant/index")
 end
 
 get '/merchants/new' do
-  erb(:"merchant/new")
+  @merchants = Merchant.all()
+  erb ( :"merchant/new")
 end
 
-post '/merchants' do
-  @merchants = Merchant.new(params)
-  @merchants.save()
-  redirect to "/merchants"
+post '/merchant/snew' do
+  @merchants = Merchant.all()
+  Merchant.new(params).save()
+  redirect('/merchant')
+end
+
+get '/merchants/:id/edit' do
+  @merchants = Merchant.find(params['id'])
+  erb (:"merchant/edit")
+end
+
+post '/merchants/:id/edit' do
+  merchant = Merchant.new(params)
+  merchant.update
+  redirect ('/merchant')
+end
+
+
+get '/merchants/:id' do
+  @merchants = Merchant.find(params['id'])
+  erb (:"merchant/show")
+end
+
+post '/merchants/:id/delete' do
+  @merchant = Merchant.find(params['id'])
+  @merchant.delete()
+  redirect ('/merchant')
 end

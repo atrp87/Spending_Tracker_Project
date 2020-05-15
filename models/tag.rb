@@ -20,6 +20,21 @@ class Tag
     @id = id.to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM tags"
+    tags = SqlRunner.run(sql)
+    result = tags.map { |tag| Tag.new(tag) }
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM tags
+    WHERE id = $1"
+    values = [id]
+    tag_data = SqlRunner.run(sql, values)
+    return Tag.map_item(tag_data)
+  end
+
   def update()
     sql = "UPDATE tags SET (name) = ($1) WHERE id = $2"
     values = [@id, @name]
@@ -35,21 +50,6 @@ class Tag
   def self.delete_all()
     sql = "DELETE FROM tags"
     SqlRunner.run(sql)
-  end
-
-  def self.all()
-    sql = "SELECT * FROM tags"
-    tags = SqlRunner.run(sql)
-    result = tags.map { |tag| Tag.new(tag) }
-    return result
-  end
-
-  def self.find(id)
-    sql = "SELECT * FROM tags
-    WHERE id = $1"
-    values = [id]
-    tag_data = SqlRunner.run(sql, values)
-    return Tag.map_item(tag_data)
   end
 
 end

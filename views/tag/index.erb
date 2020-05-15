@@ -1,13 +1,22 @@
-<h1>Tags</h1>
-
-<p><a class="edit" href="/tags/new">Add new tag</a></p>
+<h1>All Tags</h1>
+<h3><a href="/tags/new">New Tag</a></h3>
 
 <table>
+  <tr>
+    <th>id</th>
+    <th>Tag</th>
+  </tr>
   <% for tag in @tags %>
   <tr>
-    <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
+    <td><%= tag.id %></td>
+    <td><a href="/tags/<%=tag.id%>"><%= tag.tag %></a></td>
+
+    <td>
+      <form action="/tags/<%= tag.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </td>
+
   </tr>
-
-  <%end%>
-
+  <% end %>
 </table>

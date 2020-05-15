@@ -1,1 +1,32 @@
-<p><a href="/transactions/new">New Transaction</p>
+<h1>Transactions</h1>
+
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/transactions/new">New Transaction</a>
+</p>
+
+<h2> Your Spending so far:</h2>
+<h3> Click on a Tag to see your spending and Budget report! </h3>
+
+<table>
+  <tr>
+    <th>Tag Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for transaction in @transactions %>
+  <tr>
+    <td><a href="/tags/<%= transaction.tags.id %>"><%= transaction.tags.tag_name %></a></td>
+    <td>|</td>
+    <td><img width="40" height="30" src= <%= transaction.tags.tag_logo %> > </td>
+    <td>|</td>
+    <td><img width="60" height="20" src= <%= transaction.merchants.merchant_logo %> > </td>
+    <td>|</td>
+    <td>£ <%= transaction.transaction_value %></td>
+    <td><form class = "div1"action="/transactions/<%= transaction.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </td>
+  </tr>
+  <% end %>
+</table>

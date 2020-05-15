@@ -1,13 +1,22 @@
-<h1>Merchants</h1>
-
-<p><a class="edit" href="/merchants/new">Add new merchant</a></p>
+<h1>All Merchants</h1>
+<h3><a href="/merchants/new">New Merchant</a></h3>
 
 <table>
+  <tr>
+    <th>id</th>
+    <th>Merchant</th>
+  </tr>
   <% for merchant in @merchants %>
   <tr>
-    <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
+    <td><%= merchant.id %></td>
+    <td><a href="/merchants/<%=merchant.id%>"><%= merchant.name %></a></td>
+
+    <td>
+      <form action="/merchants/<%= merchant.id %>/delete" method="POST">
+        <input class="btn btn--danger" type="submit" value="delete" />
+      </form>
+    </td>
+
   </tr>
-
-  <%end%>
-
+  <% end %>
 </table>

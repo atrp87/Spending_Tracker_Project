@@ -2,7 +2,7 @@
 
 I had one week to build build a Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
-During this project I consolidated and expanded on everything I had learned in the previous 3 weeks @ CodeClan.
+During this project I consolidated and expanded on everything I had learnt in the previous 3 weeks @ CodeClan.
 
 * OOP - Ruby
 * TDD - MiniTest

@@ -4,12 +4,12 @@ I had one week to build build a Web application where the user can manage expens
 
 During this project I consolidated and expanded on everything I had learnt in the previous 3 weeks @ CodeClan.
 
-* OOP - Ruby
-* TDD - MiniTest
-* Web Programming - Sinatra (REST, MVC)
-* DB design - PostgreSQL
+* Ruby
+* MiniTest
+* Sinatra (REST, MVC)
+* PostgreSQL
 * HTML & CSS
-* Version control - Git & GitHub
+* Git & GitHub
 * Agile methodologies
 
 ### Project Overview:

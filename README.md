@@ -1,27 +1,22 @@
-### Spending Tracker
+## Spending Tracker :dollar:
 
-I had one week to build build an app to consolidate and expand on everything I had learned in the previous 3 weeks.
+I had one week to build build a Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
-* Planning
-* Presentation
-* Object oriented programming with Ruby
-* Web Programming (Sinatra, REST, MVC)
-* Interacting with a PostgreSQL database (CRUD)
-* Version control Git & GitHub
+During this project I consolidated and expanded on everything I had learnt in the previous 3 weeks @ CodeClan.
 
-### Constraints
-
-The project build restrictions:
-
-* HTML / CSS
 * Ruby
-* Sinatra
-* PostgreSQL and the PG gem
+* MiniTest
+* Sinatra (REST, MVC)
+* PostgreSQL
+* HTML & CSS
+* Git & GitHub
+* Agile methodologies
 
-Project must at minimum include the following core functionality:
+### Project Overview:
 
-* Creating rows
-* Reading data
-* Deleting data
-* Updating data
+* The app should allow the user to create and edit merchants, e.g. Tesco, Amazon, ScotRail
+* The app should allow the user to create and edit tags for their spending, e.g. groceries, entertainment, transport
+* The user should be able to assign tags and merchants to a transaction, as well as an amount spent on each transaction.
+* The app should display all the transactions a user has made in a single view, with each transaction's amount, merchant and tag, and a total for all transactions.
+
 

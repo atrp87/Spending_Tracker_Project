@@ -1,8 +1,9 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require_relative('../models/tag')
+require_relative('../models/merchant')
+require_relative('../models/transation')
 also_reload('../models/*')
-
 
 get '/tags' do
   @tags = Tag.all()

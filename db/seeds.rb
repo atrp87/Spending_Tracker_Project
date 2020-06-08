@@ -3,8 +3,6 @@ require_relative('../models/merchant')
 require_relative('../models/tag')
 require_relative('sql_runner')
 
-# require('pry')
-
 Transaction.delete_all()
 Merchant.delete_all()
 Tag.delete_all()
@@ -26,15 +24,10 @@ tag1.save()
 tag2.save()
 tag3.save()
 
-transaction1 = Transaction.new({ 'merchant_id' => merchant1.id, 'tag_id' => tag1.id, 'amount' => 60 })
-
-transaction1 = Transaction.new({ 'merchant_id' => merchant2.id, 'tag_id' => tag2.id, 'amount' => 20 })
-
-transaction1 = Transaction.new({ 'merchant_id' => merchant3.id, 'tag_id' => tag3.id, 'amount' => 45 })
+transaction1 = Transaction.new({ 'merchant_id' => merchant1.id, 'tag_id' => tag1.id, 'value' => 60 })
+transaction2 = Transaction.new({ 'merchant_id' => merchant2.id, 'tag_id' => tag2.id, 'vlaue' => 20 })
+transaction3 = Transaction.new({ 'merchant_id' => merchant3.id, 'tag_id' => tag3.id, 'vlaue' => 45 })
 
 transaction1.save()
 transaction2.save()  
 transaction3.save()
-
-# binding.pry
-# nil

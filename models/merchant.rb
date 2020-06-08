@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner.rb')
+require_relative('./transaction')
+require_relative('./tag')
+
 
 class Merchant
 

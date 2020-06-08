@@ -1,27 +1,26 @@
-require_relative('merchant.rb')
-require_relative('user.rb')
-require_relative('tag.rb')
 require_relative('../db/sql_runner.rb')
+require_relative('./merchant')
+require_relative('./tag')
+
 
 class Transaction
 
   attr_reader   :id
-  attr_accessor :amount, :tag_id, :merchant_id, :budget
+  attr_accessor :vlaue, :tag_id, :merchant_id
 
   def initialize( options )
     @id          = options['id'].to_i if options['id']
-    @amount      = options['amount_id'].to_i
+    @value       = options['vlaue_id'].to_i
     @tag_id      = options['tag_id'].to_i
     @merchant_id = options['merchant_id'].to_i
-    @budget      = 300
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, tag_id, merchant_id, budget)
+    sql = "INSERT INTO transactions (value, tag_id, merchant_id)
     VALUES
     ($1, $2, $3, $4)
     RETURNING id"
-    values = [@amount, @tag_id, @merchant_id, @user_id]
+    values = [@value, @tag_id, @merchant_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
     @id = id.to_i
@@ -43,10 +42,10 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, tag_id, merchant_id, budget) =
+    sql = "UPDATE transactions SET (vlaue, tag_id, merchant_id) =
     ($1, $2, $3, $4)
     WHERE id = $5"
-    values = [@id, @amount, @tag_id, @merchant_id, @budget]
+    values = [@id, @value, @tag_id, @merchant_id]
     SqlRunner.run(sql, values)
   end
 
@@ -59,6 +58,20 @@ class Transaction
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
+  end
+
+  def merchant
+    sql = "SELECT * FROM merchants WHERE id = $1"
+    values = [@merchant_id]
+    merchant = SqlRunner.run(sql, values)
+    return Merchant.new(merchant.first)
+  end
+
+  def tag
+    sql = "SELECT * FROM tags WHERE id = $1"
+    values = [@tag_id]
+    tag = SqlRunner.run(sql, values)
+    return Tag.new(tag.first)
   end
 
 end

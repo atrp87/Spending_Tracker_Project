@@ -1,43 +1,45 @@
 require('sinatra')
 require('sinatra/contrib/all')
-require_relative('../models/tag')
+
+require_relative('../models/transaction')
 require_relative('../models/merchant')
-require_relative('../models/transation')
+require_relative('../models/tag')
+
 also_reload('../models/*')
 
-get '/tags' do
+get '/tag' do
   @tags = Tag.all()
-  erb (:"tag/index")
+  erb (:"tags/index")
 end
 
-get '/tags/new' do
+get '/tag/new' do
   @tags = Tag.all()
-  erb (:"tag/new")
+  erb (:"tags/new")
 end
 
-post '/tags/new' do
+post '/tag/new' do
   @tags = Tag.all()
   Tag.new(params).save()
   redirect('/tag')
 end
 
-get '/tags/:id/edit' do
+get '/tag/:id/edit' do
   @tags = Tag.find(params['id'])
-  erb (:"tag/edit")
+  erb (:"tags/edit")
 end
 
-post '/tags/:id/edit' do
+post '/tag/:id/edit' do
   tag = Tag.new(params)
   tag.update()
   redirect ('/tag')
 end
 
-get '/tags/:id' do
+get '/tag/:id' do
   @tags = Tag.find(params['id'])
-  erb (:"tag/show")
+  erb (:"tags/show")
 end
 
-post '/tags/:id/delete' do
+post '/tag/:id/delete' do
   @tags = Tag.find(params['id'])
   @tags.delete()
   redirect('/tag')

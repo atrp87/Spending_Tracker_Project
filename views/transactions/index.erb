@@ -1,0 +1,23 @@
+<h1>Transactions</h1>
+
+<form action="/transaction/new">
+  <input type="submit" value="New Transaction">
+</form>
+ 
+<div>
+    <% total = 0 %>
+    <% for transaction in @transaction %>
+    <p>Merchant: <%= transaction.merchant.name() %></p>
+    <p>Tag: <%= transaction.tag.name() %></p>
+    <p>Transaction Amount: <%= transaction.value() %></p>
+    <% total += transaction.value() %>
+    <form method="post" action="/transaction/<%= transaction.id %>/delete">
+    <input type="submit" value="Delete Transaction"></form>
+    <% end %>
+</div>
+
+<div>
+    <h3>Total Expenditure: <%=total%> </label></h3>
+    # <h3>Budget: <%=transaction.value - total %></h3>
+</div>
+

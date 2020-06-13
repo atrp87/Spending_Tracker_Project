@@ -1,0 +1,9 @@
+<h2>Edit or Delete Tag: <%= @tags.name %></h2>
+
+<form action="/tag/<%=@tags.id%>/delete" method="post">
+    <input type="submit" value="Delete">
+</form>
+
+<form action="/tag/<%=@tags.id%>/edit" method="get">
+    <input type="submit" value="Edit">
+</form>

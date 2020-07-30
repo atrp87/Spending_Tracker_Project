@@ -1,5 +1,5 @@
 body {
-    background-color: #313146;
+    background-color: blue;
   }
   
   .pill-nav a {
@@ -26,7 +26,7 @@ body {
       padding: 15px;
       text-align: center;
       background: #699BCB;
-      color: #dddee0;
+      color: #ddd;
       font-size: 30px;
     }
   
@@ -62,5 +62,4 @@ body {
     .navbar a.active {
       color: white;
     }
-  
   

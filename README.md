@@ -12,6 +12,18 @@ During this project I consolidated and expanded on everything I had learnt in th
 * Git & GitHub
 * Agile methodologies
 
+Project setup
+Install required modules, create and seed database.
+
+bundle install
+createdb spending_tracker
+ruby db/seeds.rb
+Using the project
+
+Host the app locally using Sinatra, defaults to port 4567
+
+ruby app.rb
+
 ### MVP
 
 * The app should allow the user to create and edit merchants, e.g. Tesco, Amazon, ScotRail

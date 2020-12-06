@@ -14,7 +14,7 @@ Install required modules, create and seed database.
 
 ```ruby
 bundle install
-createdb gym
+createdb spending_tracker
 ruby db/seeds.rb
 ```
 

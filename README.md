@@ -1,4 +1,4 @@
-## Spending Tracker :dollar:
+# Spending Tracker :dollar:
 
 A dynamic web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 

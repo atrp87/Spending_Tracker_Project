@@ -32,4 +32,3 @@ Host the app locally using Sinatra, defaults to port 4567
 ```ruby
 ruby app.rb
 ```
->>>>>>> 2b60bd34d75c2210d8fc1e477ec31b1282830007

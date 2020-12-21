@@ -1,6 +1,3 @@
-/// ad colums x 4
-
-
 body {
     background-color: #60a9ff;
     /* display: flex;
@@ -10,7 +7,7 @@ body {
 }
 
 h1 {
-    text-align: center;
+    /* text-align: center; */
 }
 
 .topnav {

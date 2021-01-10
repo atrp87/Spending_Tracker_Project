@@ -8,6 +8,8 @@ A dynamic web application where the user can manage expenses to individual categ
 * [Ruby](https://www.ruby-lang.org/en/)
 * [Sinatra](http://sinatrarb.com/)
 * [PostgreSQL](https://www.postgresql.org/)
+* [Bootstrap](https://getbootstrap.com/)
+
 
 ### Project setup
 Install required modules, create and seed database.

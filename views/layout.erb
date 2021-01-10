@@ -3,22 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="title">Spending Tracker</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <link rel="stylesheet" href="/style.css">
+<title>Spending Tracker</title>
 </head>
 
 <body>
-
-  <div class="topnav">
-  <a class="active" href="/">Home</a>
-  <a href="/tag">Tags</a>
-  <a href="/merchant">Merchants</a>
-  <a href="/transaction">transactions</a>
-</div>
-
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand">
+          <img width="50px" src="https://image.shutterstock.com/image-vector/letter-m-logo-mm-initials-260nw-295908632.jpg" alt="image">
+        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/tag">Categories</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="merchant">Merchants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transaction">Transactions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
 
     <%= yield %>
-
-</body>
 
 </html>

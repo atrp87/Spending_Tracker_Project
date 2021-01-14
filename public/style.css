@@ -27,3 +27,9 @@ nav.navbar {
 nav.navbar {
     background-color: #6d6875;
 }
+
+.tag-new {
+    height: 10em;
+    display: flex;
+    align-items: center
+}

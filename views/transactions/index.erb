@@ -1,12 +1,8 @@
-
-<p>11111111</p>
-<p>11111111</p>
-<p>11111111</p>
-<p>11111111</p>
+<div class="container">
+<div class="row">
 <form action="/transaction/new">
   <input type="submit" value="New Transaction">
 </form>
-
 <div>
     <% total = 0 %>
     <% for transaction in @transaction %>
@@ -17,6 +13,7 @@
     <form method="post" action="/transaction/<%= transaction.id %>/delete">
     <input type="submit" value="Delete Transaction"></form>
     <% end %>
-</div>
-
     <h3 id="total">Total Expenditure: £<%=total%></h3>
+</div>
+</div>
+</div>

@@ -1,11 +1,20 @@
+
+<div class="container">
+
 <h1>Tags</h1>
+<div class="row">
+<div class="col-sm-6">
+<div></div>
   <form action="/tag/new">
   <input type="submit" value="New Tag"></form>
-
     <p><% for tag in @tags %></p>
     <p><a href="/tag/<%= tag.id %>"><%=tag.name %></a></p>
-
+    </div>
+    
+</div>
+</div>
+</div>
     
 
     <% end %>
-  
+

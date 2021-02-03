@@ -1,10 +1,9 @@
+
 <h1>Merchants</h1>
-<hr/ >
+
 <form action="/merchant/new">
 <input type="submit" value="New Merchant"></form>
 
   <p><% for merchant in @merchants %></p>
   <p><a class="name" href="/merchant/<%= merchant.id %>"> <%= merchant.name %></a></p>
   <% end %>
-
-  

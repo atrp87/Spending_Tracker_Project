@@ -4,6 +4,7 @@ A dynamic web application where the user can manage expenses to individual categ
 
 <img src="images/hero1.png" width="500" height="400">
 <img src="images/hero2.png" width="500" height="400">
+<img src="images/hero3.png" width="500" height="400">
 
 ### Built With
 * [Ruby](https://www.ruby-lang.org/en/)

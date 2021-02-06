@@ -5,5 +5,5 @@
 <input type="submit" value="New Merchant"></form>
 
   <p><% for merchant in @merchants %></p>
-  <p><a class="name" href="/merchant/<%= merchant.id %>"> <%= merchant.name %></a></p>
+  <p><a href="/merchant/<%= merchant.id %>"> <%= merchant.name %></a></p>
   <% end %>

@@ -16,11 +16,12 @@ A dynamic web application where the user can manage expenses to individual categ
 
 
 ### Project setup
-Install required modules, create and seed database.
+Install required modules, create and seed database (You must have Ruby, Sinatra, and PSQL installed).
 
 ```ruby
 bundle install
 createdb spending_tracker
+psql -d spending_tracker -f db/spending_tracker.sql
 ruby db/seeds.rb
 ```
 

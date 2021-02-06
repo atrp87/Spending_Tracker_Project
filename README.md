@@ -27,7 +27,7 @@ ruby db/seeds.rb
 
 Using the project
 
-Host the app locally using Sinatra, defaults to port 4567
+Host the app locally using Sinatra, defaults to port http://localhost:4567/
 
 ```ruby
 ruby app.rb

@@ -4,6 +4,6 @@
 <form action="/tag/new">
 <input type="submit" value="New Tag"></form>
 
-  <p><% for tag in @tags %></p>
+<% for tag in @tags %>
   <p><a href="/tag/<%= tag.id %>"> <%= tag.name %></a></p>
   <% end %>

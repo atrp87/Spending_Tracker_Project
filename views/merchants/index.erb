@@ -3,7 +3,6 @@
 
 <form action="/merchant/new">
 <input type="submit" value="New Merchant"></form>
-
-  <p><% for merchant in @merchants %></p>
+  <% for merchant in @merchants %>
   <p><a href="/merchant/<%= merchant.id %>"> <%= merchant.name %></a></p>
   <% end %>

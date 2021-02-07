@@ -1,5 +1,7 @@
 # Spending Tracker :dollar:
 
+#### :seedling: Under Maintenance
+
 A dynamic web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
 <img src="images/hero1.png" width="700" height="400">
@@ -14,17 +16,18 @@ A dynamic web application where the user can manage expenses to individual categ
 
 
 ### Project setup
-Install required modules, create and seed database.
+Install required modules, create and seed database (You must have Ruby, Sinatra, and PSQL installed).
 
 ```ruby
 bundle install
 createdb spending_tracker
+psql -d spending_tracker -f db/spending_tracker.sql
 ruby db/seeds.rb
 ```
 
 Using the project
 
-Host the app locally using Sinatra, defaults to port 4567
+Host the app locally using Sinatra, defaults to port http://localhost:4567/
 
 ```ruby
 ruby app.rb

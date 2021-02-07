@@ -1,9 +1,27 @@
 
-<h1>tag</h1>
 
+<div id="list" class="container-fluid text-center d-flex align-items-center justify-content-center">
+            <div class="row">
+                <div class="col-lg-12">
+                <h3>Catagories</h3>
 <form action="/tag/new">
-<input type="submit" value="New Tag"></form>
-
+  <input type="submit" class ="btn btn-secondary" value="Create New">
+  
+</form>
+  </div>
+</div>
+</div>
 <% for tag in @tags %>
-  <p><a href="/tag/<%= tag.id %>"> <%= tag.name %></a></p>
+ 
+ <div class="container-fluid text-center d-flex align-items-center justify-content-center">
+ <div class="col-lg-12">
+  <ul class="list-group">
+  
+  <li class="list-group-item list-group-item-action">
+    <a href="/tag/<%= tag.id %>"> <%= tag.name %></a>
+  </li>
+  
+</ul>
+<div>
+</div>
   <% end %>

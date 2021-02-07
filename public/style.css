@@ -97,14 +97,10 @@ margin-bottom: 4rem;
     margin-bottom: 20px;
 }
 
-/* .list-group-item {
-    border:0 !important;
-    padding-top:2px !important;
-    padding-bottom:2px !important;
-} */
-
-ul,li{
+.list-group {
+    padding-left: 30px;
 }
+
 
 a:link {
     text-decoration: none;

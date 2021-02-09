@@ -4,7 +4,8 @@
   <input type="submit" value="New Transaction">
 </form>
 <div>
-    <% total = 0 %>
+
+    <!-- <% total = 500 %> -->
     <% for transaction in @transaction %>
     <p>Merchant: <%= transaction.merchant.name() %></p>
     <p>Tag: <%= transaction.tag.name() %></p>

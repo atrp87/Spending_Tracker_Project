@@ -97,11 +97,10 @@ margin-bottom: 4rem;
     margin-bottom: 20px;
 }
 
-.list-group {
-    padding-left: 30px;
-}
-
-
 a:link {
     text-decoration: none;
+}
+
+.card container-fuild{
+    margin-top: 100px;
 }

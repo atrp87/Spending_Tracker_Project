@@ -6,10 +6,10 @@
     <h5 class="card-title"> <%= @tags.name %> </h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <form action="/tag/<%=@tags.id%>/delete" method="post">
-        <input type="submit" class="btn btn-danger" value="Delete">
+        <input type="submit" class="btn btn-danger edit-btn" value="Delete">
     </form>
     <form action="/tag/<%=@tags.id%>/edit" method="get">
-        <input type="submit" class="btn btn-primary" value="Edit">
+        <input type="submit" class="btn btn-primary edit-btn" value="Edit">
     </form>
   </div>
 </div>

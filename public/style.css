@@ -92,11 +92,6 @@ nav.navbar {
 margin-bottom: 4rem;
 }
 
-#list {
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
 a:link {
     text-decoration: none;
 }
@@ -115,3 +110,24 @@ a:link {
     margin-top: 15vh;
 }
 
+.edit-btn {
+    width: 50%;
+    margin-top: 5px;
+}
+
+.create-btn {
+    width: 15%;
+    margin-top: 5px;
+}
+
+.card {
+    padding-top: 10px;
+}
+
+.create-card {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}

@@ -1,32 +1,13 @@
-<div class="container">
-        <h1 class="display-4">New Merchants</h1>
-        <form action="/merchant/new" method="post">
-            <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="name"></label>
-                <input type="text" name="name" class="form-control" id="merch" placeholder="Amazon...">
-                <button type="submit" value="save" class="btn btn-success">Create</button>
-            </div>
-
-<div class="container">
-<div class="row">
-    <div class="col-md-4">
-    <img width="200px" src="https://www.retailgazette.co.uk/wp-content/uploads/2020/04/Tesco-Extra_grocery_shopfront_ST-696x464.jpg" alt="Category img sample">
-    <p class="text-muted">
-    One of three columns
-    </p>
+<div class="card-body border create-card text-center">
+    <h5 class="card-title">New Category</h5>
+    <p class="card-text">Creating a New Catagory, You will be able to Edit and Delete after Creating.</p>
+  <form action="/merchant/new" method="post">
+    <div class="form-group">
+        <label for="name"></label>
+        <input type="text" name="name" class="form-control" id="name" placeholder="Amazon...">
     </div>
-    <div class="col-md-4">
-    <img width="200px" src="https://techcrunch.com/wp-content/uploads/2016/07/gettyimages-521186348.jpg" alt="Category img sample">
-    <p>
-    One of three columns
-    </p>
-    </div>
-    <div class="col-md-4">
-    <img width="200px" src="https://i.pinimg.com/originals/96/3e/c4/963ec47de76a6ace10ccd7a918ecc223.jpg" alt="Category img sample">
-      <p>
-      One of three columns
-      </p>
-    </div>
-  </div>
+      <button type="submit" value="save" class="btn btn-success create-btn">Submit</button>
+  </form>
 </div>
+  
+  

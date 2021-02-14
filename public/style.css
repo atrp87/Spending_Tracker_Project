@@ -101,6 +101,6 @@ a:link {
     text-decoration: none;
 }
 
-.card container-fuild{
-    margin-top: 100px;
-}
+.mt-50 {
+    margin-top: 0 !important;
+  }

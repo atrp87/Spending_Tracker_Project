@@ -1,27 +1,20 @@
 
-
-<div id="list" class="container-fluid text-center d-flex  justify-content-center">
-            <div class="row">
-                <div class="col-lg-8">
-                
-<form action="/tag/new">
-  <label class="display-6 mt-0" for="name">Catagories</label>
-  <input type="submit" id="name" class ="btn btn-success" value="Create New">
-</form>
+<div class="card text-center head-list d-flex align-items-center justify-content-center">
+  <div class="card-body">
+    <h4 class="card-title">Catagories</h4>
+    <p class="card-text"><b>Create</b> and <b>Edit</b> Existing Catagories.</p>
+    <a href="/tag/new"" class="btn btn-success">Create New Category</a>
   </div>
 </div>
-</div>
+
 <% for tag in @tags %>
- 
- <div class="container-fluid text-center d-flex align-items-center justify-content-center">
- <div class="col-lg-12">
-  <ul class="list-group">
-  
-  <li class="list-group-item list-group-item-action">
-    <a href="/tag/<%= tag.id %>"> <%= tag.name %></a>
-  </li>
-  
-</ul>
-<div>
-</div>
-  <% end %>
+
+<div class="container main-list second item text-center">  
+  <ul class="list-group">  
+    <li class="list-group-item list-group-item-action">
+      <a href="/tag/<%= tag.id %>"> <%= tag.name %></a>
+    </li>    
+  </ul>
+</div> 
+
+<% end %>

@@ -1,32 +1,8 @@
-
-
-<form class="form" action="/transaction/new" method="post">
-
-  <select name="merchant_id">
-
-    <% for merchant in @merchants %>
-    <option value="<%= merchant.id %>"><%= merchant.name %></option>
-    <% end %>
-  </select>
-
-
-  <select name="tag_id">
-
-    <% for tag in @tags %>
-    <option value="<%= tag.id %>"><%= tag.name %></option>
-    <% end %>
-  </select>
-
-
-  <input type="number" name="value"required>
-  <input type="submit" value="add transaction">
-</form>
-
 <div class="card-body border create-card text-center">
     <h5 class="card-title">New Transaction</h5>
     <p class="card-text">Create a New Transaction and add the amount.</p>
   <form action="/transaction/new" method="post">
-  <select name="merchant_id" class="form-select" aria-label="Default select example">
+  <select name="merchant_id" class="form-select merchSelect" aria-label="Default select example">
   <% for merchant in @merchants %>
   <option value="<%= merchant.id %>"><%= merchant.name %></option>
   <% end %>
@@ -36,11 +12,10 @@
   <option value="<%= tag.id %>"><%= tag.name %></option>
   <% end %>
 </select>
-<input type="number" name="value"required>
-  <input type="submit" value="add transaction">
+
     <div class="form-group">
         <label for="name"></label>
-        <input type="text" name="name" class="form-control" id="name">
+        <input type="number" name="value" class="form-control" id="name" required placeholder="£">
     </div>
       <button type="submit" value="save" class="btn btn-success create-btn">Add</button>
   </form>

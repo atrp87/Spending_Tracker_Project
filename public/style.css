@@ -131,3 +131,7 @@ a:link {
     left: 50%;
     transform: translate(-50%, -50%)
 }
+
+.merchSelect {
+    margin-bottom: 15px;
+}

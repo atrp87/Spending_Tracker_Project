@@ -135,3 +135,7 @@ a:link {
 .merchSelect {
     margin-bottom: 15px;
 }
+
+#mCard {
+    border: solid 2px blue;
+}

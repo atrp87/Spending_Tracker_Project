@@ -1,19 +1,52 @@
-<div class="container">
-<div class="row">
-<form action="/transaction/new">
-  <input type="submit" value="New Transaction">
-</form>
-<div>
+<div class="card text-center head-list d-flex align-items-center justify-content-center">
+  <div class="card-body">
+    <h4 class="card-title">Transactions</h4>
+    <p class="card-text"><b>Create</b> a New Transaction.</p>
+    <a href="/transaction/new" class="btn btn-success">Create New Transaction</a>
+  </div>
+</div>
 
-    <% total = 0 %>
-    <% for transaction in @transaction %>
-    <p>Merchant: <%= transaction.merchant.name() %></p>
-   
-    <p>Tag: <%= transaction.tag.name() %></p>
-    <p>Transaction Amount: £<%= transaction.value() %></p>
-    <% total += transaction.value() %>
+
+<% total = 0 %>
+<% for transaction in @transaction %>
+
+<div class="list-group col-md-6 border">
+    <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"> <%= transaction.merchant.name %></h5>
+    <h5 class="mb-1"> <%= transaction.tag.name %></h5>
+    <h5 class="mb-1"><b>£</b> <%= transaction.value %></h5>
+     <% total += transaction.value %>
     <form method="post" action="/transaction/<%= transaction.id %>/delete">
     <input type="submit" value="Delete Transaction"></form>
+    </div>
+    </div>
     <% end %>
-    <h3 id="total">Total Expenditure: £<%=total%></h3>
-</div>
+
+    <div class="container main-list second item text-center"> 
+
+      <h3 id="total">Overall Expenditure £<%=total%> </h3>
+    </div>
+
+   <!--> <% total = 0 %>
+<% for transaction in @transaction %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+
+  <table class="table table-hover">
+<tbody >
+    <tr>
+      <td scope="col"> <%= transaction.merchant.name %> </td>
+      <td scope="col"> <%= transaction.tag.name %> </td>
+      <td scope="col"> <b>£</b> <%= transaction.value %> </td>
+      <% total += transaction.value %>
+    </tr>
+</tbody>
+</table>
+

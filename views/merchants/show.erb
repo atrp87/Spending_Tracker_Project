@@ -3,7 +3,7 @@
 
   <div class="card-body">
     <h5 class="card-title"> <%= @merchants.name %> </h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <p class="card-text">Deleteting <%= @merchants.name %> from your merchants will remove any current transactions using this name.</p>
     <form action="/merchant/<%=@merchants.id%>/delete" method="post">
         <input type="submit" class="btn btn-danger edit-btn" value="Delete">
     </form>

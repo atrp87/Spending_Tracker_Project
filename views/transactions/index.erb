@@ -6,47 +6,22 @@
   </div>
 </div>
 
-
 <% total = 0 %>
 <% for transaction in @transaction %>
-
-<div class="list-group col-md-6 border">
-    <div class="d-flex w-100 justify-content-between">
-    <h5 class="mb-1"> <%= transaction.merchant.name %></h5>
-    <h5 class="mb-1"> <%= transaction.tag.name %></h5>
-    <h5 class="mb-1"><b>£</b> <%= transaction.value %></h5>
-     <% total += transaction.value %>
-    <form method="post" action="/transaction/<%= transaction.id %>/delete">
-    <input type="submit" value="Delete Transaction"></form>
+<div class="list-group transaction-list align-items-center col-md-8 border">
+    <div class="d-flex w-100 justify-content-between text-center list-group-item-action">
+    <h5> <%= transaction.merchant.name %></h5>
+    <h5> <%= transaction.tag.name %></h5>
+    <h5><b>£</b> <%= transaction.value %></h5>
+    <% total += transaction.value %>
+    <form onsubmit="return confirm('Are you sure you want to delete ?')" method="post" action="/transaction/<%= transaction.id %>/delete">
+    <input type="submit" class="btn btn-danger" value="Delete"></form>
     </div>
     </div>
     <% end %>
 
-    <div class="container main-list second item text-center"> 
+    <div id="total" class="container second item text-center"> 
 
       <h3 id="total">Overall Expenditure £<%=total%> </h3>
     </div>
-
-   <!--> <% total = 0 %>
-<% for transaction in @transaction %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-
-  <table class="table table-hover">
-<tbody >
-    <tr>
-      <td scope="col"> <%= transaction.merchant.name %> </td>
-      <td scope="col"> <%= transaction.tag.name %> </td>
-      <td scope="col"> <b>£</b> <%= transaction.value %> </td>
-      <% total += transaction.value %>
-    </tr>
-</tbody>
-</table>
 

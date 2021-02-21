@@ -107,7 +107,9 @@ a:link {
 }
 
 .transaction-list {
+    width: 60%;
     margin: auto;
+    margin-bottom: -4%;
     margin-top: 5%;
     padding: 0.5em 1em 0.5em 1em;
 }

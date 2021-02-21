@@ -1,11 +1,11 @@
-<div class="card container-fluid all-cards text-center  align-items-center justify-content-center" style="width: 18rem;">
+<div class="card shadow container-fluid all-cards text-center  align-items-center justify-content-center" style="width: 18rem;">
   <img src="https://assets.dryicons.com/uploads/icon/svg/8541/ef4b0add-0cab-4157-a1c6-17300361abba.svg" class=" rounded-circle card-img-top" alt="card image">
   <div class="card-body">
     <h5 class="card-title"><strong> <%= @merchants.name %> </strong></h5>
     <p class="card-text"><b>Edit</b> will update current merchant.</p>
     <form action="/merchant/<%= @merchants.id %>/edit" method="post">
-      <input type="text" name="name" value="<%= @merchants.name %>">
-      <input type="submit" class="btn btn-success edit-btn" value="save">
+      <input type="text" name="name" value="<%= @merchants.name %>" required>
+      <input type="submit" class="btn btn-success edit-btn" value="update">
     </form>
   </div>
 </div>

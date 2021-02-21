@@ -1,4 +1,4 @@
-<div class="card text-center head-list d-flex align-items-center justify-content-center">
+<div class="card sticky text-center head-list d-flex align-items-center justify-content-center">
   <div class="card-body">
     <h4 class="card-title">Transactions</h4>
     <p class="card-text"><b>Create</b> a New Transaction.</p>
@@ -14,14 +14,13 @@
     <h5> <%= transaction.tag.name %></h5>
     <h5><b>£</b> <%= transaction.value %></h5>
     <% total += transaction.value %>
-    <form onsubmit="return confirm('Are you sure you want to delete ?')" method="post" action="/transaction/<%= transaction.id %>/delete">
+    <form onsubmit="return confirm('Are you sure you want to delete this transaction ?')" method="post" action="/transaction/<%= transaction.id %>/delete">
     <input type="submit" class="btn btn-danger" value="Delete"></form>
     </div>
     </div>
     <% end %>
 
-    <div id="total" class="container second item text-center"> 
-
-      <h3 id="total">Overall Expenditure £<%=total%> </h3>
+    <div class="container second item text-center "> 
+      <h3 id="total">Total Expense £<%=total%> </h3>
     </div>
 

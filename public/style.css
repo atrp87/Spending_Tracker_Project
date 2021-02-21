@@ -107,8 +107,9 @@ a:link {
 }
 
 .transaction-list {
-margin-bottom: 15px;
-margin: 0 auto;
+    margin: auto;
+    margin-top: 5%;
+    padding: 0.5em 1em 0.5em 1em;
 }
 
 /* .transaction-list:nth-of-type(2n) {
@@ -151,9 +152,27 @@ margin: 0 auto;
 
 #total {
     position: absolute;
-    margin-top: 100px;
+    margin-left: 11%;
+    margin-top: 210px;
     top: 0px;
-    width:100%;
+	font-weight: 600;
+	font-family: 'Titillium Web', sans-serif;
+	font-size: 36px;
+	line-height: 40px;
+	padding: 15px 15px 15px 15%;
+	color: #355681;
+	box-shadow: 
+		inset 0 0 0 1px rgba(53,86,129, 0.4), 
+		inset 0 0 5px rgba(53,86,129, 0.5),
+		inset -285px 0 35px white;
+	border-radius: 0 10px 0 10px;
+	background: #fff url(https://cdn3.iconfinder.com/data/icons/market-and-economic/48/71-512.png) no-repeat center left;
+
 }
 
-// Create sticky remove absolute
+shadow {
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+

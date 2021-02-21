@@ -8,8 +8,9 @@
 
 <% total = 0 %>
 <% for transaction in @transaction %>
-<div class="list-group transaction-list shadow align-items-center col-md-8 border">
-    <div class="d-flex w-100 justify-content-between text-center list-group-item-action">
+<div class="list-group transaction-list shadow align-items-center border col-md-8">
+    <div class="d-flex w-100 justify-content-between text-center border list-group-item-action">
+              <!-- ADD INNER PADDING & ALIGN TEXT ON NUMERIC GROWTH-->
     <h5> <%= transaction.merchant.name %></h5>
     <h5> <%= transaction.tag.name %></h5>
     <h5><b>£</b> <%= transaction.value %></h5>

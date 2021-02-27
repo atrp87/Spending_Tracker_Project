@@ -9,11 +9,10 @@
 <% total = 0 %>
 <% for transaction in @transaction %>
 <div class="list-group transaction-list shadow align-items-center border col-md-8">
-    <div class="d-flex w-100 justify-content-between text-center border list-group-item-action">
-              <!-- ADD INNER PADDING & ALIGN TEXT ON NUMERIC GROWTH-->
-    <h5> <%= transaction.merchant.name %></h5>
-    <h5> <%= transaction.tag.name %></h5>
-    <h5><b>£</b> <%= transaction.value %></h5>
+    <div class="d-flex w-100 justify-content-between text-center list-group-item-action">
+    <h5 class="h5-first"> <%= transaction.merchant.name %></h5>
+    <h5 class="h5-second"> <%= transaction.tag.name %></h5>
+    <h5 class="h5-third"><b>£</b> <%= transaction.value %></h5>
     <% total += transaction.value %>
     <form onsubmit="return confirm('Are you sure you want to delete this transaction ?')" method="post" action="/transaction/<%= transaction.id %>/delete">
     <input type="submit" class="btn btn-danger" value="Delete"></form>

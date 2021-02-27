@@ -128,7 +128,7 @@ a:link {
 }
 
 .create-btn {
-    width: 15%;
+    width: 100px;
     margin-top: 5px;
 }
 
@@ -178,4 +178,17 @@ shadow {
     text-align: center;
 }
 
-/* create class for each h5 center text and dont move better font */
+.h5-first {
+    width: 10%;
+    margin-left: 0%;
+}
+
+.h5-second {
+    margin: auto;
+}
+
+.h5-third {
+    margin-left: 3%;
+}
+
+/* @media on sm screen 3 stack & Center text + numbers */

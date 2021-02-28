@@ -6,7 +6,6 @@ class SqlRunner
     begin
       # Local Host.
       db = PG.connect ( { dbname: 'spending_tracker', host: 'localhost' } )
-
       # Heroku.
       # db = PG.connect( { dbname: 'd3k6ovivv66fhd',
       # host: 'ec2-54-211-77-238.compute-1.amazonaws.com',

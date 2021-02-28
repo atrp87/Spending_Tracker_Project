@@ -1,4 +1,4 @@
-<div class="card text-center head-list d-flex align-items-center justify-content-center">
+<div class="card text-center head-list-transaction d-flex align-items-center justify-content-center">
   <div class="card-body">
     <h4 class="card-title">Transactions</h4>
     <p class="card-text"><b>Create</b> a New Transaction.</p>
@@ -9,7 +9,7 @@
 <% total = 0 %>
 <% for transaction in @transaction %>
 <div class="list-group transaction-list shadow align-items-center border col-md-8">
-    <div class="d-flex w-100 justify-content-between text-center list-group-item-action">
+    <div class="w-100 justify-content-between text-center list-group-item-action">
     <h5 class="h5-first"> <%= transaction.merchant.name %></h5>
     <h5 class="h5-second"> <%= transaction.tag.name %></h5>
     <h5 class="h5-third"><b>£</b> <%= transaction.value %></h5>

@@ -1,7 +1,5 @@
 # Spending Tracker :dollar:
 
-#### :seedling: Under Maintenance
-
 A dynamic web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
 <img src="images/hero1.png" width="700" height="400">

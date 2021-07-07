@@ -2,7 +2,7 @@
 
 Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
-<img src="images/hero.png" width="700" height="400">
+<img src="public/money_bulk.png" width="700" height="400">
 
 * MVC Design
 * CRUD Functionality

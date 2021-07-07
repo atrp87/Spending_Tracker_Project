@@ -1,4 +1,4 @@
-# Spending Tracker :dollar:
+# Money Bulk :dollar:
 
 Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 

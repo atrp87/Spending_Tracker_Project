@@ -1,46 +1,31 @@
-require('sinatra')
-require('sinatra/contrib/all') if development?
-
-require_relative('../models/transaction')
-require_relative('../models/merchant')
 require_relative('../models/tag')
-
+require('sinatra/contrib/all')
+require('sinatra')
 also_reload('../models/*')
 
-get '/tag' do
+get '/tags' do
   @tags = Tag.all()
-  erb (:"tags/index")
+  erb(:'tags/index')
 end
 
-get '/tag/new' do
-  @tags = Tag.all()
-  erb (:"tags/new")
+post '/tags' do
+  @tag = Tag.new(params)
+  @tag.save()
+  redirect to ('/tags')
 end
 
-post '/tag/new' do
-  @tags = Tag.all()
-  Tag.new(params).save()
-  redirect('/tag')
+get '/tags/:id/edit' do
+  @tag = Tag.find(params[:id].to_i)
+  erb(:'tags/edit')
 end
 
-get '/tag/:id/edit' do
-  @tags = Tag.find(params['id'])
-  erb (:"tags/edit")
+post '/tags/:id/delete' do
+  Tag.destroy(params[:id])
+  redirect to ('/tags')
 end
 
-post '/tag/:id/edit' do
-  tag = Tag.new(params)
-  tag.update()
-  redirect ('/tag')
-end
-
-get '/tag/:id' do
-  @tags = Tag.find(params['id'])
-  erb (:"tags/show")
-end
-
-post '/tag/:id/delete' do
-  @tags = Tag.find(params['id'])
-  @tags.delete()
-  redirect('/tag')
+post '/tags/:id' do
+  update = Tag.new(params)
+  update.update()
+  redirect to ('/tags')
 end

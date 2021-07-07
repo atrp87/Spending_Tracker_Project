@@ -1,36 +1,58 @@
 require('sinatra')
-require('sinatra/contrib/all') if development?
-
+require('sinatra/contrib/all')
 require_relative('../models/transaction')
-require_relative('../models/merchant')
-require_relative('../models/tag')
-
 also_reload('../models/*')
 
-get '/transaction' do
-  @transaction = Transaction.all()
-  erb( :"transactions/index" )
-end
-
-get '/transaction/new' do
+get '/transactions' do
+  @transactions = Transaction.all()
   @merchants = Merchant.all()
   @tags = Tag.all()
-  erb ( :"transactions/new")
+  @total = Transaction.total()
+  erb( :'transactions/index' )
 end
 
-post '/transaction/new' do
-  @transaction = Transaction.all()
-  Transaction.new(params).save()
-  redirect('/transaction')
+get '/transactions/merchants' do
+  @transactions = Transaction.filter_by_merchant(params[:merchant_id].to_i)
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  @total = Transaction.merchants_total(params[:merchant_id].to_i)
+  erb( :'transactions/index')
 end
 
-get '/transaction/:id' do
-  @transactions = Transaction.find(params['id'])
-  erb (:"transactions/index")
+get '/transactions/tags' do
+  @transactions = Transaction.filter_by_tag(params[:tag_id].to_i)
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  @total = Transaction.tags_total(params[:tag_id].to_i)
+  erb( :'transactions/index')
 end
 
-post '/transaction/:id/delete' do
-  @transaction = Transaction.find(params['id'])
-  @transaction.delete()
-  redirect ('/transaction')
+get '/transactions/new' do
+  @tags = Tag.all()
+  @merchants = Merchant.all()
+  erb( :'transactions/new' )
+end
+
+post '/transactions' do
+  transaction = Transaction.new(params)
+  transaction.save
+  redirect to ('/transactions')
+end
+
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params[:id].to_i)
+  @tags = Tag.all
+  @merchants = Merchant.all
+  erb( :'transactions/edit')
+end
+
+post '/transactions/:id' do
+  update = Transaction.new(params)
+  update.update()
+  redirect to ('/transactions')
+end
+
+post '/transactions/:id/delete' do
+  Transaction.destroy(params[:id])
+  redirect to '/transactions'
 end

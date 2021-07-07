@@ -1,4 +1,4 @@
-require_relative( '../db/sql_runner.rb' )
+require_relative('../db/sql_runner')
 
 class Tag
 
@@ -6,52 +6,57 @@ class Tag
   attr_accessor :name
 
   def initialize(options)
-    @id   = options['id'].to_i if options['id']
+    @id = options['id'].to_i if options['id']
     @name = options['name']
   end
 
   def save()
-    sql = "INSERT INTO tags (name) VALUES ($1) RETURNING id"
+    sql = 'INSERT INTO tags
+    (name) VALUES ($1) RETURNING id'
     values = [@name]
-    results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
-  end
-
-  def self.all()
-    sql = "SELECT * FROM tags"
-    results = SqlRunner.run(sql)
-    return results.map {|tag| Tag.new(tag)}
-  end
-
-  def self.delete_all()
-    sql = "DELETE FROM tags"
-    SqlRunner.run(sql)
-  end
-
-  def self.find(id)
-    sql = "SELECT * FROM tags WHERE id = $1"
-    values = [id]
-    results = SqlRunner.run(sql, values)
-    return Tag.new(results.first)
-  end
-
-  def delete()
-    sql = "DELETE FROM tags WHERE id = $1"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-  end
-
-  def merchants()
-    sql = "SELECT merch* FROM merchants merch INNER JOIN transactions transaction ON transaction.merchant_id = m.id WHERE transaction.tag_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map {|merchant| Merchant.new(merchant)}
+    tag = SqlRunner.run(sql, values).first
+    @id = tag['id'].to_i
   end
 
   def update()
-    sql = "UPDATE tags SET name = ($1) WHERE id = ($2)"
+    sql = 'UPDATE tags
+    SET name = $1
+    WHERE id = $2'
     values = [@name, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def self.destroy(id)
+    sql = "DELETE FROM transactions
+    WHERE tag_id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+    sql = "DELETE FROM tags WHERE id = $1"
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = 'SELECT * FROM tags'
+    data = SqlRunner.run(sql)
+    return Tag.map_items(data)
+  end
+
+    def self.delete_all()
+    sql = 'DELETE FROM tags'
+    SqlRunner.run(sql)
+  end
+
+    def self.map_items(data)
+    result = data.map { |tag| Tag.new(tag) }
+    return result
+  end
+
+  def self.find(id)
+    sql = 'SELECT * FROM tags
+    WHERE id = $1'
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    return Tag.new(result.first)
   end
 
 end

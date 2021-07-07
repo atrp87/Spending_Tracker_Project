@@ -1,19 +1,64 @@
-<div class="card text-center head-list d-flex align-items-center justify-content-center">
-  <div class="card-body">
-    <h4 class="card-title">Merchants</h4>
-    <p class="card-text"><b>Create</b> or <b>Edit</b> Existing Merchants.</p>
-    <a href="/merchant/new"" class="btn btn-success">Create New</a>
+<section class='vendor-header mb-4'>
+  <div>
+    <h2 class='text-center mt-3'><strong>Merchants.</strong></h2>
+    <p class='text-center'><strong>Create or edit merchants and delete existing ones.</strong></p>
   </div>
-</div>
-
-<% for merchant in @merchants %>
-
-<div class="container main-list second item text-center">  
-  <ul class="list-group">  
-    <li class="list-group-item shadow list-group-item-action">
-      <a href="/merchant/<%= merchant.id %>"> <%= merchant.name %> </a>
-    </li>    
-  </ul>
-</div> 
-
+  <div class='form-group'>
+    <form class='form-control-lg text-center d-flex' action='/merchants' method='POST'>
+      <label for='merchant-name'></label>
+      <div class='input-group justify-content-center'>
+        <input class='col-lg-3 text-center'
+          id='merchant-name' 
+          type='text' 
+          name='name' 
+          placeholder='Create Merchant' 
+          required 
+        />
+        <button class='inputButton btn btn-success btn-sm px-3 border border-dark' type='submit'>
+          <i class='fas fa-plus-square'></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<section class='vendor-table'>
+  <table class='table table-bordered table-hover table-responsive'>
+    <thead class='thead-light'>
+      <tr class='table-primary'>
+        <th scope='col'>ID#</th>
+        <th scope='col'>MERCHANT</th>
+        <th class='text-center' scope='col'>EDIT</th>
+        <th class='text-center' scope='col'>DELETE</th>
+      </tr>
+    </thead>
+    <% for merchant in @merchants %>
+    <tbody class='tbody'>
+      <tr>
+        <td scope='row'>
+          <%= merchant.id %>
+        </td>
+        <td scope='row'>
+          <%= merchant.name %></a>
+        </td>
+        <td align='center' scope='row'>
+            <a href='/merchants/<%= merchant.id %>/edit'>
+              <button class='btn btn-primary btn-sm px-3'>
+                <i class='fas fa-edit'></i>
+              </button>
+            </a>
+        <td>
+          <form class='d-flex justify-content-center' 
+            action='/merchants/<%= merchant.id %>/delete' 
+            method='POST'>
+            <fieldset>
+              <button type='submit' class='btn btn-danger btn-sm px-3'>
+                <i class='fas fa-trash-alt'></i>
+              </button>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+    </tbody>
 <% end %>
+  </table>
+</section>  

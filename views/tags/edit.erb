@@ -1,11 +1,54 @@
-<div class="card shadow container-fluid all-cards text-center  align-items-center justify-content-center" style="width: 18rem;">
-  <img src="https://assets.dryicons.com/uploads/icon/svg/8541/ef4b0add-0cab-4157-a1c6-17300361abba.svg" class=" rounded-circle card-img-top" alt="card image">
-  <div class="card-body">
-    <h5 class="card-title"><strong> <%= @tags.name %> </strong></h5>
-    <p class="card-text"><b>Edit</b> will update current catagory.</p>
-    <form action="/tag/<%= @tags.id %>/edit" method="post">
-      <input type="text" name="name" value="<%= @tags.name %>" required>
-      <input type="submit" class="btn btn-success edit-btn" value="update">
-    </form>
+<section id="catagory-edit">
+  <div class="container-lg">
+    <div class="text-center">
+      <p class="lead">
+        <i class="bi bi-journal-arrow-up"></i>
+      </p>
+      <h2>
+        <stong>
+          <%= @tag.name %>
+        </strong>
+      </h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <div class="col-lg-6">
+        <form action='/tags/<%= @tag.id %>' method='POST'>
+          <div class="input-group mb-4">
+            <span class="input-group-text">
+              <i class="bi bi-pen"></i>
+            </span>
+            <input type="text" 
+              name='name' 
+              id="tag-name" 
+              placeholder="..." 
+              aria-describedby='catagory' 
+              class="form-control" 
+              required 
+            />
+            <span class="input-group-text">
+              <span class="tt" data-bs-placement="bottom" title="Enter a new catagory and your table will be updated.">
+                <i class="bi bi-question-circle text-muted"></i>
+              </span>
+            </span>
+          </div>
+          <div class="mb-4 text-center">
+            <button type="submit" class="btn btn-success">
+              Save
+            </button>
+          </div>
+          <div class="mb-4 text-center">
+            <a href="/tags" class="btn btn-secondary">
+              Back
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-</div>
+    <script>
+      const tooltips = document.querySelectorAll('.tt')
+      tooltips.forEach(t => {
+        new bootstrap.Tooltip(t)
+      })
+    </script>
+</section>

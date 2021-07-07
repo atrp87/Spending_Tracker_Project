@@ -1,0 +1,28 @@
+<section id="budget">
+  <div class="container-lg">
+    <div class="text-center">
+      <p class="lead">
+        <i class="bi bi-bank"></i>
+      </p>
+      <% for budget in @budgets %>
+      <p class="lead">Budget.</p>
+      <h2>£<%= sprintf('%.2f', budget.amount) %></h2>
+    </div>
+    <div class="row justify-content-center my-5">
+      <div class="col-lg-6">
+        <div class="text-center mb-5">
+          <p class="lead">Excess.</p>
+          <h2>£<%= sprintf('%.2f', budget.amount - @total) %></h2>
+        </div>
+        <div class=" text-center">
+          <a href='/budgets/<%= budget.id %>/edit'>
+            <button type="submit" class='btn btn-primary'>
+              Edit
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</section>

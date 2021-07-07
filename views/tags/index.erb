@@ -1,19 +1,64 @@
-<div class="card text-center head-list d-flex align-items-center justify-content-center">
-  <div class="card-body">
-    <h4 class="card-title">Catagories</h4>
-    <p class="card-text"><b>Create</b> or <b>Edit</b> Existing Catagories.</p>
-    <a href="/tag/new"" class="btn btn-success">Create New</a>
+<section class='vendor-header mb-4'>
+  <div>
+    <h2 class='text-center mt-3'><strong>Catagories.</strong></h2>
+    <p class='text-center'><strong>Create or edit catagories and delete existing ones.</strong></p>
   </div>
-</div>
-
-<% for tag in @tags %>
-
-<div class="container main-list second item text-center">  
-  <ul class="list-group">  
-    <li class="list-group-item shadow list-group-item-action">
-      <a href="/tag/<%= tag.id %>"> <%= tag.name %> </a>
-    </li>    
-  </ul>
-</div> 
-
+  <div class='form-group'>
+    <form class='form-control-lg text-center d-flex' action='/tags' method='POST'>
+      <label for='tag-name'></label>
+      <div class='input-group justify-content-center'>
+        <input class='col-lg-3 text-center'
+          id='tag-name' 
+          type='text' 
+          name='name' 
+          placeholder='Create Category' 
+          required 
+        />
+        <button class='inputButton btn btn-success btn-sm px-3 border border-dark' type='submit'>
+          <i class='fas fa-plus-square'></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+<section class='vendor-table'>
+  <table class='table table-bordered table-hover table-responsive'>
+    <thead class='thead-light'>
+      <tr class='table-primary'>
+        <th scope='col'>ID#</th>
+        <th scope='col'>CATEGORY</th>
+        <th class='text-center' scope='col'>EDIT</th>
+        <th class='text-center' scope='col'>DELETE</th>
+      </tr>
+    </thead>
+    <% for tag in @tags %>
+    <tbody class='tbody'>
+      <tr>
+        <td scope='row'>
+          <%= tag.id %>
+        </td>
+        <td scope='row'>
+          <%= tag.name %></a>
+        </td>
+        <td align='center' scope='row'>
+            <a href='/tags/<%= tag.id %>/edit'>
+              <button class='btn btn-primary btn-sm px-3'>
+                <i class='fas fa-edit'></i>
+              </button>
+            </a>
+        <td>
+          <form class='d-flex justify-content-center' 
+            action='/tags/<%= tag.id %>/delete' 
+            method='POST'>
+            <fieldset>
+              <button type='submit' class='btn btn-danger btn-sm px-3'>
+                <i class='fas fa-trash-alt'></i>
+              </button>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+    </tbody>
 <% end %>
+  </table>
+</section>  

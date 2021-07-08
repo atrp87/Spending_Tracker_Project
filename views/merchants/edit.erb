@@ -1,19 +1,21 @@
-<section id="merchant-edit">
-  <div class="container-lg">
-    <div class="text-center">
-      <p class="lead">
-        <i class="bi bi-journal-arrow-up"></i>
-      </p>
-      <h2>
-        <stong>
-          <%= @merchant.name %>
-        </strong>
-      </h2>
-    </div>
-    <div class="row justify-content-center my-5">
-      <div class="col-lg-6">
-        <form action='/merchants/<%= @merchant.id %>' method='POST'>
-          <div class="input-group mb-4">
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+    <form action='/merchants/<%= @merchant.id %>' method='POST' class="col-12">
+      <div class="form-group">
+        <div class="text-center">
+          <p class="lead">
+            <i class="bi bi-cash-coin"></i>
+          </p>
+          <h2>
+            <stong>
+              <%= @merchant.name %>
+            </strong>
+          </h2>
+        </div>
+      <div class="row justify-content-center mt-1">
+      <div class="col-6">
+        <div class="input-group mb-4">
+<div class="input-group ">
             <span class="input-group-text">
               <i class="bi bi-pen"></i>
             </span>
@@ -21,34 +23,29 @@
               name='name' 
               id="merchant-name" 
               placeholder="..." 
-              aria-describedby='camerchantory' 
+              aria-describedby='merchants' 
               class="form-control" 
               required 
             />
             <span class="input-group-text">
-              <span class="tt" data-bs-placement="bottom" title="Enter a new camerchantory and your table will be updated.">
+              <span class="tt" data-bs-placement="bottom" title="Enter a new merchant and your table will be updated.">
                 <i class="bi bi-question-circle text-muted"></i>
               </span>
             </span>
-          </div>
-          <div class="mb-4 text-center">
-            <button type="submit" class="btn btn-success">
-              Save
-            </button>
-          </div>
-          <div class="mb-4 text-center">
-            <a href="/merchants" class="btn btn-secondary">
-              Back
-            </a>
-          </div>
-        </form>
-      </div>
-    </div>
+        </div>
+        </div>
+        <div class=" d-flex justify-content-center justify-content-around">
+          <button type="submit" class="btn btn-outline-success">Save</button>
+          <a href="/merchants" class="btn btn-outline-secondary">Back</a>
+        </div>
+    </form>
   </div>
-    <script>
-      const tooltips = document.querySelectorAll('.tt')
-      tooltips.forEach(t => {
-        new bootstrap.Tooltip(t)
-      })
-    </script>
-</section>
+</div>
+  </div>
+    
+<script>
+  const tooltips = document.querySelectorAll('.tt')
+  tooltips.forEach(t => {
+    new bootstrap.Tooltip(t)
+  })
+</script>

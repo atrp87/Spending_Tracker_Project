@@ -27,12 +27,6 @@ get '/transactions/tags' do
   erb( :'transactions/index')
 end
 
-get '/transactions/new' do
-  @tags = Tag.all()
-  @merchants = Merchant.all()
-  erb( :'transactions/new' )
-end
-
 post '/transactions' do
   transaction = Transaction.new(params)
   transaction.save
@@ -47,8 +41,8 @@ get '/transactions/:id/edit' do
 end
 
 post '/transactions/:id' do
-  update = Transaction.new(params)
-  update.update()
+  transaction = Transaction.new(params)
+  transaction.update()
   redirect to ('/transactions')
 end
 

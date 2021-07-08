@@ -1,32 +1,30 @@
-<section class='vendor-header mb-4'>
-  <div>
-    <h2 class='text-center mt-3'><strong>Merchants.</strong></h2>
-    <p class='text-center'><strong>Create or edit merchants and delete existing ones.</strong></p>
-  </div>
-  <div class='form-group'>
-    <form class='form-control-lg text-center d-flex' action='/merchants' method='POST'>
-      <label for='merchant-name'></label>
-      <div class='input-group justify-content-center'>
-        <input class='col-lg-3 text-center'
-          id='merchant-name' 
-          type='text' 
-          name='name' 
-          placeholder='Create Merchant' 
-          required 
-        />
-        <button class='inputButton btn btn-success btn-sm px-3 border border-dark' type='submit'>
-          <i class='fas fa-plus-square'></i>
-        </button>
+<section id="merchant-create">
+    <div class="container-lg mt-4">
+      
+      <div class="text-center">
+        <h2>Merchants.</h2>
+        <p>Create or edit merchants and delete existing ones.</p>
       </div>
-    </form>
+      <div class="row justify-content-center mb-4">
+        <div class="col-lg-6">
+          <form action='/merchants' method='POST'>
+            <div class="input-group mb-4">
+            <label for='name'></label>
+              <input type="text" id="name" name='name' class="form-control" placeholder="New Merchant" required />
+  <div class="input-group-append">
+    <button class="btn btn-outline-success" type='submit'>Save</button>
   </div>
-</section>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 <section class='vendor-table'>
   <table class='table table-bordered table-hover table-responsive'>
     <thead class='thead-light'>
       <tr class='table-primary'>
-        <th scope='col'>ID#</th>
-        <th scope='col'>MERCHANT</th>
+        <th scope='col'>CATEGORY</th>
         <th class='text-center' scope='col'>EDIT</th>
         <th class='text-center' scope='col'>DELETE</th>
       </tr>
@@ -35,15 +33,12 @@
     <tbody class='tbody'>
       <tr>
         <td scope='row'>
-          <%= merchant.id %>
-        </td>
-        <td scope='row'>
           <%= merchant.name %></a>
         </td>
         <td align='center' scope='row'>
             <a href='/merchants/<%= merchant.id %>/edit'>
-              <button class='btn btn-primary btn-sm px-3'>
-                <i class='fas fa-edit'></i>
+              <button class='btn btn-outline-primary btn-sm px-3'>
+                <i class="bi bi-pen"></i>
               </button>
             </a>
         <td>
@@ -51,8 +46,8 @@
             action='/merchants/<%= merchant.id %>/delete' 
             method='POST'>
             <fieldset>
-              <button type='submit' class='btn btn-danger btn-sm px-3'>
-                <i class='fas fa-trash-alt'></i>
+              <button type='submit' class='btn btn-outline-danger btn-sm px-3'>
+                <i class="bi bi-trash"></i>
               </button>
             </fieldset>
           </form>

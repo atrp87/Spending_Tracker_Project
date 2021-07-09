@@ -19,13 +19,13 @@ get '/tags/:id/edit' do
   erb(:'tags/edit')
 end
 
-post '/tags/:id/delete' do
-  Tag.destroy(params[:id])
-  redirect to ('/tags')
-end
-
 post '/tags/:id' do
   update = Tag.new(params)
   update.update()
+  redirect to ('/tags')
+end
+
+post '/tags/:id/delete' do
+  Tag.destroy(params[:id])
   redirect to ('/tags')
 end

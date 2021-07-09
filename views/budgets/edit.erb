@@ -1,10 +1,10 @@
-<div class="container h-100">
-  <div class="row h-100 justify-content-center align-items-center">
-    <form action='/budgets/<%= @budget.id %>' method='POST' class="col-12">
-      <div class="form-group">
-        <div class="text-center">
-          <p class="lead">
-            <i class="bi bi-cash-coin"></i>
+<section class='container h-100'>
+  <div class='row h-100 justify-content-center align-items-center'>
+    <form action='/budgets/<%= @budget.id %>' method='POST' class='col-12'>
+      <div class='form-group'>
+        <div class='text-center'>
+          <p class='lead'>
+            <i class='bi bi-cash-coin'></i>
           </p>
           <h2>
             <stong>
@@ -12,28 +12,29 @@
             </strong>
           </h2>
         </div>
-      <div class="row justify-content-center mt-1">
-      <div class="col-6">
-        <div class="input-group mb-4">
-          <span class="input-group-text">
-            <i class="bi bi-currency-pound"></i>
+      <div class='row justify-content-center mt-1'>
+      <div class='col-6'>
+        <label for='budget-input'>New Budget:</label>
+        <div class='input-group mb-4'>
+          <span class='input-group-text'>
+            <i class='bi bi-currency-pound'></i>
           </span>
-          <input type="number" step='0.01' name='amount' id="amount" aria-describedby='amount' class="form-control" placeholder='£0.00' required />
-          <span class="input-group-text">
-            <span class="tt" data-bs-placement="bottom" title="Enter a new budget and your allowance will be updated.">
-              <i class="bi bi-question-circle text-muted"></i>
+          <input type='number' step='0.01' name='amount' id='budget-input' aria-describedby='amount' class='form-control' placeholder='£0.00' required />
+          <span class='input-group-text'>
+            <span class='tt' data-bs-placement='bottom' title='Enter a new budget and your allowance will be updated.'>
+              <i class='bi bi-question-circle text-muted'></i>
             </span>
           </span>
         </div>
-        <div class=" d-flex justify-content-center justify-content-around">
-          <button type="submit" class="btn btn-outline-success">Save</button>
-          <a href="/budgets" class="btn btn-outline-secondary">Back</a>
+        <div class=' d-flex justify-content-center justify-content-around'>
+          <button type='submit' class='btn btn-outline-success'>Save</button>
+          <a href='/budgets' class='btn btn-outline-secondary'>Back</a>
         </div>
-    </form>
+      </form>
+    </div>
   </div>
-</div>
-  </div>
-    
+</section>
+
 <script>
   const tooltips = document.querySelectorAll('.tt')
   tooltips.forEach(t => {

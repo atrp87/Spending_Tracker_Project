@@ -1,25 +1,24 @@
-<section id="merchant-create">
-    <div class="container-lg mt-4">
-      
-      <div class="text-center">
-        <h2>Merchants.</h2>
-        <p>Create or edit merchants and delete existing ones.</p>
-      </div>
-      <div class="row justify-content-center mb-4">
-        <div class="col-lg-6">
-          <form action='/merchants' method='POST'>
-            <div class="input-group mb-4">
+<section id='merchant-create'>
+  <div class='container-lg mt-4'>
+    <div class='text-center'>
+      <h2>Merchants.</h2>
+      <p>Create or edit merchants and delete existing ones.</p>
+    </div>
+    <div class='row justify-content-center mb-4'>
+      <div class='col-lg-6'>
+        <form action='/merchants' method='POST'>
+          <div class='input-group mb-4'>
             <label for='name'></label>
-              <input type="text" id="name" name='name' class="form-control" placeholder="New Merchant" required />
-  <div class="input-group-append">
-    <button class="btn btn-outline-success" type='submit'>Save</button>
-  </div>
+            <input type='text' id='name' name='name' class='form-control' placeholder='New Merchant' required />
+            <div class='input-group-append'>
+              <button class='btn btn-outline-success' type='submit'>Save</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 <section class='vendor-table'>
   <table class='table table-bordered table-hover table-responsive'>
     <thead class='thead-light'>
@@ -36,24 +35,22 @@
           <%= merchant.name %></a>
         </td>
         <td align='center' scope='row'>
-            <a href='/merchants/<%= merchant.id %>/edit'>
-              <button class='btn btn-outline-primary btn-sm px-3'>
-                <i class="bi bi-pen"></i>
-              </button>
-            </a>
+          <a href='/merchants/<%= merchant.id %>/edit'>
+            <button class='btn btn-outline-primary btn-sm px-3'>
+              <i class='bi bi-pen'></i>
+            </button>
+          </a>
         <td>
           <form class='d-flex justify-content-center' 
             action='/merchants/<%= merchant.id %>/delete' 
             method='POST'>
-            <fieldset>
               <button type='submit' class='btn btn-outline-danger btn-sm px-3'>
-                <i class="bi bi-trash"></i>
+                <i class='bi bi-trash'></i>
               </button>
-            </fieldset>
           </form>
         </td>
       </tr>
     </tbody>
-<% end %>
+    <% end %>
   </table>
 </section>  

@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 
 class Budget
-
+  
   attr_reader :id
   attr_accessor :amount
 
@@ -26,9 +26,7 @@ class Budget
   end
 
   def update()
-    sql = 'UPDATE budgets
-    SET amount = $1
-    WHERE id = $2'
+    sql = 'UPDATE budgets SET amount = $1 WHERE id = $2'
     values = [@amount, @id]
     SqlRunner.run(sql, values)
   end
@@ -50,8 +48,7 @@ class Budget
   end
 
   def self.find(id)
-    sql = 'SELECT * FROM budgets
-    WHERE id = $1'
+    sql = 'SELECT * FROM budgets WHERE id = $1'
     values = [id]
     result = SqlRunner.run(sql, values)
     return Budget.new(result.first)

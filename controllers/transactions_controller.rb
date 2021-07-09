@@ -1,6 +1,6 @@
-require('sinatra')
-require('sinatra/contrib/all')
 require_relative('../models/transaction')
+require('sinatra/contrib/all')
+require('sinatra')
 also_reload('../models/*')
 
 get '/transactions' do
@@ -28,8 +28,8 @@ get '/transactions/tags' do
 end
 
 post '/transactions' do
-  transaction = Transaction.new(params)
-  transaction.save
+  @transaction = Transaction.new(params)
+  @transaction.save
   redirect to ('/transactions')
 end
 
@@ -41,8 +41,8 @@ get '/transactions/:id/edit' do
 end
 
 post '/transactions/:id' do
-  transaction = Transaction.new(params)
-  transaction.update()
+  update = Transaction.new(params)
+  update.update()
   redirect to ('/transactions')
 end
 

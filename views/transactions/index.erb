@@ -4,10 +4,12 @@
     <p class='text-center'>Create, edit and delete transactions aswell as filter categories and merchants by name.</p>
   </div>
 <! -- CATEGORY -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm mb-3">
-        <form class='form-group' action='/transactions' method='POST'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm mb-3'>
+        <form class='form-group' 
+            action='/transactions' 
+            method='POST'>
           <select required name='tag_id' class='form-select text-muted' aria-label='.form-select-lg'>
             <option hidden selected>Category</option>
             <% for tag in @tags %>
@@ -15,9 +17,8 @@
             <% end %>
           </select>
       </div>
-
 <! -- MERCHANT -->
-      <div class="col-sm mb-3">
+      <div class='col-sm mb-3'>
         <select required name='merchant_id' class='form-select text-muted' aria-label='.form-select-lg'>
           <option hidden selected>Merchant</option>
           <% for merchant in @merchants %>
@@ -25,12 +26,11 @@
           <% end %>
         </select>
       </div>
-
 <! -- AMOUNT -->
-      <div class="col-sm">
-      <div class="input-group mb-4">
+      <div class='col-sm'>
+      <div class='input-group mb-4'>
           <input
-            class="form-control text-muted"
+            class='form-control text-muted'
             required
             placeholder='£0.00' 
             id='amount' 
@@ -39,28 +39,26 @@
             placeholder='add merchant' 
             required 
           />
-          <div class="input-group-append">
-            <button class="btn btn-outline-success" type='submit'>Save</button>
+          <div class='input-group-append'>
+            <button class='btn btn-outline-success' type='submit'>Save</button>
           </div>
           </form>
         </div>
-       
       </div>
     </div>
   </div>
-  
     <! -- CATAGORY FILTER -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm d-flex justify-content-center">
+  <div class='container'>
+    <div class='row'>
+      <div class='col-sm d-flex justify-content-center'>
         <form class='filter' action='/transactions/tags' method='GET'>
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <button class="btn btn-outline-success" type="submit" value="Submit">
-                <i class="bi bi-funnel"></i>
+          <div class='input-group mb-3'>
+            <div class='input-group-append'>
+              <button class='btn btn-outline-success' type='submit' value='Submit'>
+                <i class='bi bi-funnel'></i>
               </button>
             </div>
-            <select name='tag_id' required class="form-select form-select-m mb-3 text-muted">
+            <select name='tag_id' required class='form-select form-select-m mb-3 text-muted'>
               <option value="" disabled selected>Filter Catagorys</option>
               <% for tag in @tags %>
               <option value='<%= tag.id %>'><%= tag.name %></option>
@@ -68,25 +66,24 @@
             </select>
         </form>
       </div>
-      <div class="input-group-prepend">
-        <a href="/transactions">
-          <button class="btn btn-outline-secondary" type="submit" value="Submit">
-            <i class="bi bi-arrow-counterclockwise"></i>
+      <div class='input-group-prepend'>
+        <a href='/transactions'>
+          <button class='btn btn-outline-secondary' type='submit' value='Submit'>
+            <i class='bi bi-arrow-counterclockwise'></i>
           </button>
         </a>
       </div>
     </div>
-
 <! -- MERCHANT FILTER -->
-  <div class="col-sm d-flex justify-content-center">
+  <div class='col-sm d-flex justify-content-center'>
     <form class='filter' action='/transactions/merchants' method='GET'>
-      <div class="input-group mb-3">
-        <div class="input-group-append">
-          <button class="btn btn-outline-success" type="submit" value="Submit">
-            <i class="bi bi-funnel"></i>
+      <div class='input-group mb-3'>
+        <div class='input-group-append'>
+          <button class='btn btn-outline-success' type='submit' value='Submit'>
+            <i class='bi bi-funnel'></i>
         </button>
       </div>
-      <select name='merchant_id' required class="form-select form-select-m mb-3 text-muted">
+      <select name='merchant_id' required class='form-select form-select-m mb-3 text-muted'>
         <option value="" disabled selected>Filter Merchants</option>
           <% for merchant in @merchants %>
           <option value='<%= merchant.id %>'><%= merchant.name %></option>
@@ -94,23 +91,22 @@
         </select>
     </form>
   </div>
-    <div class="input-group-prepend">
-      <a href="/transactions">
-        <button class="btn btn-outline-secondary" type="submit" value="Submit">
-            <i class="bi bi-arrow-counterclockwise"></i>
+    <div class='input-group-prepend'>
+      <a href='/transactions'>
+        <button class='btn btn-outline-secondary' type='submit' value='Submit'>
+            <i class='bi bi-arrow-counterclockwise'></i>
         </button>
       </a>
     </div>
   </div>
 </section>
-
 <! -- TABLE -->
 <section>
   <table class='table table-bordered table-hover table-responsive'>
     <thead class='thead-light'>
       <tr class='table-primary'>
-        <th scope="col">CATEGORIES</th>
-        <th scope="col">MERCHANTS</th>
+        <th scope='col'>CATEGORIES</th>
+        <th scope='col'>MERCHANTS</th>
         <th class='text-center' scope='col'>- £ <%= sprintf('%.2f', @total) %></th>
         <th class='text-center' scope='col'>EDIT</th>
         <th class='text-center' scope='col'>DELETE</th>
@@ -131,13 +127,13 @@
         <td align='center' scope='row'>
           <a href='/transactions/<%= transaction.id %>/edit'>
             <button type='submit' class='btn btn-outline-primary btn-sm px-3'>
-              <i class="bi bi-pen"></i>
+              <i class='bi bi-pen'></i>
             </button>
           </a>
         <td>
           <form class='d-flex justify-content-center' action='/transactions/<%= transaction.id %>/delete' method='POST'>
             <button type='submit' class='btn btn-outline-danger btn-sm px-3'>
-              <i class="bi bi-trash"></i>
+              <i class='bi bi-trash'></i>
             </button>
           </form>
         </td>

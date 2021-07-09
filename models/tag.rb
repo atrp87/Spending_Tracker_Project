@@ -11,24 +11,20 @@ class Tag
   end
 
   def save()
-    sql = 'INSERT INTO tags
-    (name) VALUES ($1) RETURNING id'
+    sql = 'INSERT INTO tags (name) VALUES ($1) RETURNING id'
     values = [@name]
     tag = SqlRunner.run(sql, values).first
     @id = tag['id'].to_i
   end
 
   def update()
-    sql = 'UPDATE tags
-    SET name = $1
-    WHERE id = $2'
+    sql = 'UPDATE tags SET name = $1 WHERE id = $2'
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
   def self.destroy(id)
-    sql = "DELETE FROM transactions
-    WHERE tag_id = $1"
+    sql = "DELETE FROM transactions WHERE tag_id = $1"
     values = [id]
     SqlRunner.run(sql, values)
     sql = "DELETE FROM tags WHERE id = $1"

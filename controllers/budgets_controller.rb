@@ -1,6 +1,6 @@
-require('sinatra')
-require('sinatra/contrib/all')
 require_relative('../models/budget')
+require('sinatra/contrib/all')
+require('sinatra')
 also_reload('../models/*')
 
 get '/budgets' do

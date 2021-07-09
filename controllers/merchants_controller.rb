@@ -19,13 +19,13 @@ get '/merchants/:id/edit' do
   erb(:'merchants/edit')
 end
 
-post '/merchants/:id/delete' do
-  Merchant.destroy(params[:id])
-  redirect to ('/merchants')
-end
-
 post '/merchants/:id' do
   update = Merchant.new(params)
   update.update()
+  redirect to ('/merchants')
+end
+
+post '/merchants/:id/delete' do
+  Merchant.destroy(params[:id])
   redirect to ('/merchants')
 end

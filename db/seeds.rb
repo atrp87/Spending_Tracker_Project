@@ -8,7 +8,6 @@ Merchant.delete_all()
 Budget.delete_all()
 Tag.delete_all()
 
-
 tag1 = Tag.new({ 'name' => 'Groceries' })
 tag2 = Tag.new({ 'name' => 'Business' })
 tag3 = Tag.new({ 'name' => 'Gym' })

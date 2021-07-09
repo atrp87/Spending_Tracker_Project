@@ -1,7 +1,6 @@
 require_relative('../models/transaction')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require('sinatra')
-also_reload('../models/*')
 
 get '/transactions' do
   @transactions = Transaction.all()

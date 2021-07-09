@@ -1,7 +1,6 @@
 require_relative('../models/tag')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require('sinatra')
-also_reload('../models/*')
 
 get '/tags' do
   @tags = Tag.all()

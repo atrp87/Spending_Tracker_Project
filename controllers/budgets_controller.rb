@@ -1,7 +1,6 @@
 require_relative('../models/budget')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require('sinatra')
-also_reload('../models/*')
 
 get '/budgets' do
   @budgets = Budget.all()

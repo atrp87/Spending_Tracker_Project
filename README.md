@@ -1,9 +1,10 @@
 
 # Money Bulk :dollar:
+[[Live Version]](https://money-bulk.herokuapp.com/)
 
 Web application where the user can manage expenses to individual categories, then assign expenditure to one of those categories and display all transactions.
 
-<img src="public/money_bulk.png" width="700" height="400">
+<img src="public/images/money_bulk.png" width="700" height="400">
 
 * MVC Design
 * CRUD Functionality
